@@ -1,0 +1,30 @@
+{
+  "name": "graphql-now",
+  "version": "0.0.0",
+  "description": "Bootstrap GraphQL project in seconds",
+  "bin": {
+    "graphql-now": "./index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/didierfranc/graphql-now.git"
+  },
+  "keywords": ["graphql", "now", "mock"],
+  "author": "Didier Franc <didierfranc@me.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/didierfranc/graphql-now/issues"
+  },
+  "homepage": "https://github.com/didierfranc/graphql-now#readme",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "faker": "^4.1.0",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^2.23.1",
+    "raw-body": "^2.3.2"
+  }
+}
