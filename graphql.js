@@ -17,10 +17,14 @@ const cors = next => (req, res) => {
 
 module.exports = (schemaPath, mocksPath) => {
   const typeDefs = readFileSync(schemaPath, 'utf8')
-
   const schema = makeExecutableSchema({ typeDefs })
+  const mocksFile = readFileSync(mocksPath, 'utf8')
 
-  addMockFunctionsToSchema({ schema, mocks: mocksPath && require(mocksPath) })
+  let mocks
+
+  eval(mocksFile.replace('module.exports', 'mocks'))
+
+  addMockFunctionsToSchema({ schema, mocks })
 
   const app = cors(async (req, res) => {
     if (req.method === 'GET') {

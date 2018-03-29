@@ -1,6 +1,6 @@
 {
   "name": "graphql-now",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Bootstrap GraphQL project in seconds",
   "bin": {
     "graphql-now": "./index.js"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/didierfranc/graphql-now#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "chalk": "^2.3.2",
     "faker": "^4.1.0",
     "graphql": "^0.13.2",
