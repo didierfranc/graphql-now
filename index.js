@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const { readFileSync, existsSync } = require('fs')
 const chalk = require('chalk')
 const { post } = require('axios')

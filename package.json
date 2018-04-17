@@ -1,13 +1,13 @@
 {
   "name": "graphql-now",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bootstrap GraphQL project in seconds",
   "bin": {
     "graphql-now": "./index.js"
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "try": "node index.js"
   },
   "repository": {
     "type": "git",

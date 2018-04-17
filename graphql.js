@@ -1,5 +1,5 @@
 const { createServer } = require('http')
-const { readFileSync } = require('fs')
+const { readFileSync, existsSync } = require('fs')
 const getRawBody = require('raw-body')
 const { graphql } = require('graphql')
 const {
@@ -18,11 +18,13 @@ const cors = next => (req, res) => {
 module.exports = (schemaPath, mocksPath) => {
   const typeDefs = readFileSync(schemaPath, 'utf8')
   const schema = makeExecutableSchema({ typeDefs })
-  const mocksFile = readFileSync(mocksPath, 'utf8')
 
   let mocks
 
-  eval(mocksFile.replace('module.exports', 'mocks'))
+  if (existsSync(mocksPath)) {
+    const mocksFile = readFileSync(mocksPath, 'utf8')
+    eval(mocksFile.replace('module.exports', 'mocks'))
+  }
 
   addMockFunctionsToSchema({ schema, mocks })
 
